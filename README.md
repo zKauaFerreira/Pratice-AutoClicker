@@ -126,21 +126,23 @@ O executável `AutoClicker.exe` foi verificado no VirusTotal. Mesmo com o códig
 <details>
 <summary>🔗 Clique aqui para ver os detalhes técnicos da verificação</summary>
 
-* **MD5:** `cda65bb4c0f7c228994eb1943c2f74b6`
-* **SHA-1:** `68178679881e8482698da3a0817870e78d80d12d`
-* **SHA-256:** `eb874b9e4765f160c49c5be0077a6d52c8111f496e38f317195283094b42d1f2`
-* **Vhash:** `025066655d155555105023z60028z17z22z376z475z`
-* **Authentihash:** `b9ff4ed5b8277b9380a189bd5eec35bc74bfc47a21bccbd6fed141c86902bfc6`
-* **Imphash:** `981ddffeef62a167ce08ee932f32e981`
-* **Rich PE header hash:** `fc61f43648502f89c0bb1217411dd8e7`
-* **SSDEEP:** `3072:Su2H0sFAAUL9ynC9n1vlgpXctCv8bIPzrihu+iqCrM769QoP17E3j6uF7bd:StH02AAWynC91vl7Keu+Z76/7E3v`
-* **TLSH:** `T185347D67B24500B6D0F3C1FC8A9792A7F3B3BC19476262CF12B172394E76AD15D3A612`
-* **File Type:** Win32 EXE (PE32+ executable GUI x86-64)
-* **Magic:** PE32+ executable (GUI) x86-64, for MS Windows
-* **TrID:** Win64 Executable 48.7% / Win16 NE 23.3% / OS/2 Executable 9.3% / Generic Win/DOS 9.2% / DOS Generic 9.2%
-* **DetectItEasy:** PE64, Compiler MSVC 19.36.35217, Linker MS Linker 14.36.35217, Tool Visual Studio 2022
-* **Magika:** PEBIN
-* **File Size:** 246.50 KB (252416 bytes)
+| Propriedade             | Valor                                                                                                    |
+| ----------------------- | -------------------------------------------------------------------------------------------------------- |
+| **MD5**                 | `cda65bb4c0f7c228994eb1943c2f74b6`                                                                       |
+| **SHA-1**               | `68178679881e8482698da3a0817870e78d80d12d`                                                               |
+| **SHA-256**             | `eb874b9e4765f160c49c5be0077a6d52c8111f496e38f317195283094b42d1f2`                                       |
+| **Vhash**               | `025066655d155555105023z60028z17z22z376z475z`                                                            |
+| **Authentihash**        | `b9ff4ed5b8277b9380a189bd5eec35bc74bfc47a21bccbd6fed141c86902bfc6`                                       |
+| **Imphash**             | `981ddffeef62a167ce08ee932f32e981`                                                                       |
+| **Rich PE header hash** | `fc61f43648502f89c0bb1217411dd8e7`                                                                       |
+| **SSDEEP**              | `3072:Su2H0sFAAUL9ynC9n1vlgpXctCv8bIPzrihu+iqCrM769QoP17E3j6uF7bd:StH02AAWynC91vl7Keu+Z76/7E3v`          |
+| **TLSH**                | `T185347D67B24500B6D0F3C1FC8A9792A7F3B3BC19476262CF12B172394E76AD15D3A612`                               |
+| **File Type**           | Win32 EXE (PE32+ executable GUI x86-64)                                                                  |
+| **Magic**               | PE32+ executable (GUI) x86-64, for MS Windows                                                            |
+| **TrID**                | Win64 Executable 48.7% / Win16 NE 23.3% / OS/2 Executable 9.3% / Generic Win/DOS 9.2% / DOS Generic 9.2% |
+| **DetectItEasy**        | PE64, Compiler MSVC 19.36.35217, Linker MS Linker 14.36.35217, Tool Visual Studio 2022                   |
+| **Magika**              | PEBIN                                                                                                    |
+| **File Size**           | 246.50 KB (252416 bytes)                                                                                 |
 
 🔗 [Abrir análise completa no VirusTotal](https://www.virustotal.com/gui/file/eb874b9e4765f160c49c5be0077a6d52c8111f496e38f317195283094b42d1f2?nocache=1)
 
@@ -158,3 +160,4 @@ Contribuições são bem-vindas!
 <p align="center">
   Desenvolvido com 💙 por <b>Kauã Ferreira</b>!
 </p>
+
