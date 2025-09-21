@@ -63,6 +63,7 @@ void AutoClicker::ToggleEnabled() {
     std::string text = m_enabled ? "AutoClicker ON" : "AutoClicker OFF";
 
     m_notification.Show(StringToWString(text), m_enabled);
+    m_clickHandler.NotifyStateChange();
 }
 
 void AutoClicker::SetCPS(int cps) {
@@ -175,6 +176,34 @@ LRESULT CALLBACK AutoClicker::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM
                     case ID_MENU_CHANGE_TOGGLE_KEY:
                         pThis->ShowChangeToggleKeyModal();
                         break;
+                    case ID_MENU_CLICKER_M1: {
+                        bool current = cfg->GetKey("ClickerOptions").value("mouse1Enabled", true);
+                        cfg->GetKey("ClickerOptions")["mouse1Enabled"] = !current;
+                        cfg->Save();
+                        pThis->GetTrayIcon()->UpdateMenuState(GetMenu(hWnd));
+                        break;
+                    }
+                    case ID_MENU_CLICKER_M2: {
+                        bool current = cfg->GetKey("ClickerOptions").value("mouse2Enabled", true);
+                        cfg->GetKey("ClickerOptions")["mouse2Enabled"] = !current;
+                        cfg->Save();
+                        pThis->GetTrayIcon()->UpdateMenuState(GetMenu(hWnd));
+                        break;
+                    }
+                    case ID_MENU_CLICKER_M4: {
+                        bool current = cfg->GetKey("ClickerOptions").value("mouse4Enabled", true);
+                        cfg->GetKey("ClickerOptions")["mouse4Enabled"] = !current;
+                        cfg->Save();
+                        pThis->GetTrayIcon()->UpdateMenuState(GetMenu(hWnd));
+                        break;
+                    }
+                    case ID_MENU_CLICKER_M5: {
+                        bool current = cfg->GetKey("ClickerOptions").value("mouse5Enabled", true);
+                        cfg->GetKey("ClickerOptions")["mouse5Enabled"] = !current;
+                        cfg->Save();
+                        pThis->GetTrayIcon()->UpdateMenuState(GetMenu(hWnd));
+                        break;
+                    }
                     case ID_MENU_EXIT:
                         PostQuitMessage(0);
                         break;

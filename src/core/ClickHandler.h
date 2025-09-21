@@ -26,6 +26,7 @@ public:
     // Called by the InputHook
     void SetButtonState(MouseButton button, bool pressed);
     void ToggleSpamMode(MouseButton button);
+    void NotifyStateChange();
 
 private:
     void ClickerThread();

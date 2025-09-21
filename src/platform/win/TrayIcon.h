@@ -36,6 +36,13 @@
 #define ID_MENU_NOTIFY_DUR_5S 1403
 #define ID_MENU_NOTIFY_DUR_10S 1404
 
+// Clicker Options
+#define ID_MENU_CLICKER_SUBMENU 1500
+#define ID_MENU_CLICKER_M1 1501
+#define ID_MENU_CLICKER_M2 1502
+#define ID_MENU_CLICKER_M4 1503
+#define ID_MENU_CLICKER_M5 1504
+
 class AutoClicker; // Forward declaration
 
 class TrayIcon {
@@ -47,10 +54,10 @@ public:
     void Destroy();
     void ShowNotification(const std::wstring& title, const std::wstring& text);
     LRESULT HandleMessage(UINT msg, WPARAM wParam, LPARAM lParam);
+    void UpdateMenuState(HMENU menu);
 
 private:
     void ShowContextMenu();
-    void UpdateMenuState(HMENU menu);
 
     HWND m_hWnd;
     HINSTANCE m_hInstance;

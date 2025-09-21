@@ -9,6 +9,10 @@
 #include "platform/win/FullscreenDetector.h"
 #include "platform/win/Registry.h"
 
+// Helper to convert UTF-8 std::string to std::wstring
+std::wstring StringToWString(const std::string& str);
+
+class AutoClicker; // Forward declaration
 class AutoClicker {
 public:
     AutoClicker();
@@ -30,7 +34,11 @@ public:
     HINSTANCE GetInstance() { return m_hInstance; }
     HWND GetWindowHandle() { return m_hWnd; }
 
+    void SetMenuOpen(bool isOpen) { m_isMenuOpen = isOpen; }
+    bool IsMenuOpen() const { return m_isMenuOpen; }
+
 private:
+    std::atomic<bool> m_isMenuOpen = false;
     bool m_enabled;
     int m_cps;
 

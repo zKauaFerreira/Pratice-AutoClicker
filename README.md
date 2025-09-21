@@ -20,6 +20,11 @@ Depois de instalar ou executar o `AutoClicker.exe`, um ícone aparecerá na sua 
 
 - **✅ Enabled:** Ativa ou desativa globalmente o autoclicker.  
 - **⚡ Set CPS:** Defina a velocidade de cliques por segundo. Também é possível escolher `Custom...` para inserir manualmente.  
+- **🖱️ Clicker:**
+  - `Mouse 1 (Hold)`: Ativa/desativa o autoclick para o botão esquerdo.
+  - `Mouse 2 (Hold)`: Ativa/desativa o autoclick para o botão direito.
+  - `Mouse 4 (Left - Toggle)`: Ativa/desativa o spam de cliques esquerdos com o botão lateral M4.
+  - `Mouse 5 (Right - Toggle)`: Ativa/desativa o spam de cliques direitos com o botão lateral M5.
 - **🔔 Notifications:**
   - `Enable Notifications`: Liga/desliga notificações de ON/OFF.  
   - `Silence on Fullscreen`: Bloqueia notificações em tela cheia.  
@@ -30,6 +35,12 @@ Depois de instalar ou executar o `AutoClicker.exe`, um ícone aparecerá na sua 
   - `Start with Windows`: Inicia o app junto com o sistema.  
 - **🔄 Reset Settings:** Restaura todas as configurações.  
 - **❌ Exit:** Fecha o aplicativo.  
+
+---
+
+## 📂 Assets
+
+Para usuários que desejam apenas utilizar o programa, o executável `.exe` está disponível para download na seção **Assets** da [página de Releases do GitHub](https://github.com/zKauaFerreira/Pratice-AutoClicker/releases). Basta baixar o arquivo `AutoClicker.exe` e executar.
 
 ---
 
@@ -128,26 +139,26 @@ O executável `AutoClicker.exe` foi verificado no VirusTotal. Mesmo com o códig
 
 | Propriedade             | Valor                                                                                                    |
 | ----------------------- | -------------------------------------------------------------------------------------------------------- |
-| **MD5**                 | `cda65bb4c0f7c228994eb1943c2f74b6`                                                                       |
-| **SHA-1**               | `68178679881e8482698da3a0817870e78d80d12d`                                                               |
-| **SHA-256**             | `eb874b9e4765f160c49c5be0077a6d52c8111f496e38f317195283094b42d1f2`                                       |
-| **Vhash**               | `025066655d155555105023z60028z17z22z376z475z`                                                            |
-| **Authentihash**        | `b9ff4ed5b8277b9380a189bd5eec35bc74bfc47a21bccbd6fed141c86902bfc6`                                       |
-| **Imphash**             | `981ddffeef62a167ce08ee932f32e981`                                                                       |
-| **Rich PE header hash** | `fc61f43648502f89c0bb1217411dd8e7`                                                                       |
-| **SSDEEP**              | `3072:Su2H0sFAAUL9ynC9n1vlgpXctCv8bIPzrihu+iqCrM769QoP17E3j6uF7bd:StH02AAWynC91vl7Keu+Z76/7E3v`          |
-| **TLSH**                | `T185347D67B24500B6D0F3C1FC8A9792A7F3B3BC19476262CF12B172394E76AD15D3A612`                               |
-| **File Type**           | Win32 EXE (PE32+ executable GUI x86-64)                                                                  |
-| **Magic**               | PE32+ executable (GUI) x86-64, for MS Windows                                                            |
-| **TrID**                | Win64 Executable 48.7% / Win16 NE 23.3% / OS/2 Executable 9.3% / Generic Win/DOS 9.2% / DOS Generic 9.2% |
-| **DetectItEasy**        | PE64, Compiler MSVC 19.36.35217, Linker MS Linker 14.36.35217, Tool Visual Studio 2022                   |
-| **Magika**              | PEBIN                                                                                                    |
-| **File Size**           | 246.50 KB (252416 bytes)                                                                                 |
-
+| **MD5**                 | `081cc9fdcc543cf101f68ab75f656c3f`                                                                     |
+| **SHA-1**               | `57631b789e59d7a6632bfc9a96667f2d2cde2e22`                                                             |
+| **SHA-256**             | `31a6bf13a373f5168776e39eb17e65750368a2c25cca47f0b18698e0b573cafa`                                     |
+| **Vhash**               | `025066655d155555105023z60028z17z22z386z475z`                                                          |
+| **Authentihash**        | `40830212e03a958cdb233f865bb2dfb750fd046d29b8862beae1afc2ac1a3c8c`                                     |
+| **Imphash**             | `3d3dd533d1869add465d8fb9bb8b8564`                                                                     |
+| **Rich PE header hash** | `34bcd574b2327ef25d43524f6653fe1e`                                                                     |
+| **SSDEEP**              | `6144:7lZUVSw6K8BPia4m8kVyPVylI7s17E3v:Aef82+VVc7E3v`                                                 |
+| **TLSH**                | `T1C5447C67B34500B6D0F3C1FC8A9351B7F2B3BC29476262CF12B5723A5E76AD1583A612`                             |
+| **File Type**           | Win32 EXE                                                                                               |
+| **Magic**               | PE32+ executable (GUI) x86-64, for MS Windows                                                          |
+| **TrID**                | Win64 Executable (generic) (48.7%) / Win16 NE executable (generic) (23.3%) / OS/2 Executable (generic) (9.3%) / Generic Win/DOS Executable (9.2%) / DOS Executable Generic (9.2%) |
+| **DetectItEasy**        | PE64, Compiler: Microsoft Visual C/C++ (19.36.35217), Linker: Microsoft Linker (14.36.35217), Tool: Visual Studio (2022 version 17.6) |
+| **Magika**              | PEBIN                                                                                                   |
+| **File Size**           | 249.50 KB (255488 bytes)                                                                                |
 
 </details>
 
-#### 🔗 [Abrir análise completa no VirusTotal](https://www.virustotal.com/gui/file/eb874b9e4765f160c49c5be0077a6d52c8111f496e38f317195283094b42d1f2?nocache=1)
+#### 🔗 [Abrir análise completa no VirusTotal](https://www.virustotal.com/gui/file/31a6bf13a373f5168776e39eb17e65750368a2c25cca47f0b18698e0b573cafa/details)
+
 ---
 
 ## 🤝 Como Contribuir

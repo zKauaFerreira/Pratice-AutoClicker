@@ -81,6 +81,13 @@ void ConfigManager::ResetToDefaults() {
             {"m5LimitSeconds", 0},
             {"startWithWindows", false},
             {"killSwitchKey", VK_END}
+        }},
+
+        {"ClickerOptions", {
+            {"mouse1Enabled", true},
+            {"mouse2Enabled", true},
+            {"mouse4Enabled", true},
+            {"mouse5Enabled", true}
         }}
     };
     Save();

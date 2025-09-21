@@ -59,6 +59,7 @@ void TrayIcon::ShowContextMenu() {
     HMENU hSubMenuCPS = CreatePopupMenu();
     HMENU hSubMenuOther = CreatePopupMenu(); // Renamed from hSubMenuSettings
     HMENU hSubMenuNotifications = CreatePopupMenu(); // New submenu
+    HMENU hSubMenuClicker = CreatePopupMenu(); // New Clicker submenu
 
     HMENU hSubMenuNotifyCorner = CreatePopupMenu();
     AppendMenuW(hSubMenuNotifyCorner, MF_STRING, ID_MENU_NOTIFY_TL, L"Top-Left");
@@ -83,6 +84,12 @@ void TrayIcon::ShowContextMenu() {
     AppendMenuW(hSubMenuOther, MF_STRING, ID_MENU_CHANGE_TOGGLE_KEY, L"Change Toggle Key");
     AppendMenuW(hSubMenuOther, MF_STRING, ID_MENU_TOGGLE_START_WITH_WINDOWS, L"Start with Windows");
 
+    // Build Clicker SubMenu
+    AppendMenuW(hSubMenuClicker, MF_STRING, ID_MENU_CLICKER_M1, L"Mouse 1 (Hold)");
+    AppendMenuW(hSubMenuClicker, MF_STRING, ID_MENU_CLICKER_M2, L"Mouse 2 (Hold)");
+    AppendMenuW(hSubMenuClicker, MF_STRING, ID_MENU_CLICKER_M4, L"Mouse 4 (Left - Toggle)");
+    AppendMenuW(hSubMenuClicker, MF_STRING, ID_MENU_CLICKER_M5, L"Mouse 5 (Right - Toggle)");
+
     // Build CPS SubMenu
     AppendMenuW(hSubMenuCPS, MF_STRING, ID_MENU_CPS_1, L"1 CPS");
     AppendMenuW(hSubMenuCPS, MF_STRING, ID_MENU_CPS_5, L"5 CPS");
@@ -98,6 +105,7 @@ void TrayIcon::ShowContextMenu() {
     AppendMenuW(hMenu, MF_SEPARATOR, 0, NULL);
     AppendMenuW(hMenu, MF_POPUP, (UINT_PTR)hSubMenuCPS, L"Set CPS");
     AppendMenuW(hMenu, MF_POPUP, (UINT_PTR)hSubMenuNotifications, L"Notifications"); // Added
+    AppendMenuW(hMenu, MF_POPUP, (UINT_PTR)hSubMenuClicker, L"Clicker"); // New Clicker submenu
     AppendMenuW(hMenu, MF_POPUP, (UINT_PTR)hSubMenuOther, L"Other"); // Renamed
     AppendMenuW(hMenu, MF_SEPARATOR, 0, NULL);
     AppendMenuW(hMenu, MF_STRING, ID_MENU_RESET_CONFIG, L"Reset Settings");
@@ -108,7 +116,9 @@ void TrayIcon::ShowContextMenu() {
 
     // Show menu
     SetForegroundWindow(m_hWnd);
+    m_app->SetMenuOpen(true);
     TrackPopupMenu(hMenu, TPM_BOTTOMALIGN | TPM_LEFTALIGN, pt.x, pt.y, 0, m_hWnd, NULL);
+    m_app->SetMenuOpen(false);
     PostMessage(m_hWnd, WM_NULL, 0, 0);
 
     DestroyMenu(hMenu); // Submenus are destroyed automatically
@@ -144,11 +154,18 @@ void TrayIcon::UpdateMenuState(HMENU menu) {
         ConfigManager* cfg = m_app->GetConfigManager();
 
         HMENU hSubMenuNotifications = GetSubMenu(menu, 3);
-        HMENU hSubMenuOther = GetSubMenu(menu, 4);
+        HMENU hSubMenuClicker = GetSubMenu(menu, 4); // Get the Clicker submenu
+        HMENU hSubMenuOther = GetSubMenu(menu, 5);
 
         CheckMenuItem(hSubMenuNotifications, ID_MENU_TOGGLE_NOTIFICATIONS, cfg->GetKey("Notifications").value("notificationsEnabled", true) ? MF_CHECKED : MF_UNCHECKED);
         CheckMenuItem(hSubMenuNotifications, ID_MENU_TOGGLE_FULLSCREEN_SILENCE, cfg->GetKey("Notifications").value("silenceNotificationsOnFullscreen", true) ? MF_CHECKED : MF_UNCHECKED);
         
+        // Update Clicker options checkmarks
+        CheckMenuItem(hSubMenuClicker, ID_MENU_CLICKER_M1, cfg->GetKey("ClickerOptions").value("mouse1Enabled", true) ? MF_CHECKED : MF_UNCHECKED);
+        CheckMenuItem(hSubMenuClicker, ID_MENU_CLICKER_M2, cfg->GetKey("ClickerOptions").value("mouse2Enabled", true) ? MF_CHECKED : MF_UNCHECKED);
+        CheckMenuItem(hSubMenuClicker, ID_MENU_CLICKER_M4, cfg->GetKey("ClickerOptions").value("mouse4Enabled", true) ? MF_CHECKED : MF_UNCHECKED);
+        CheckMenuItem(hSubMenuClicker, ID_MENU_CLICKER_M5, cfg->GetKey("ClickerOptions").value("mouse5Enabled", true) ? MF_CHECKED : MF_UNCHECKED);
+
         std::string corner = cfg->GetKey("Notifications").value("notifyCorner", "top-left");
         int cornerId = ID_MENU_NOTIFY_TL;
         if (corner == "top-right") cornerId = ID_MENU_NOTIFY_TR;

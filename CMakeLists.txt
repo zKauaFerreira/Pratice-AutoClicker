@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Set Windows-specific settings
 if(WIN32)
     set(CMAKE_WINDOWS_RTC_DEFAULT "JUMPOUT")
-    add_definitions(-D_UNICODE -DUNICODE)
+    add_definitions(-D_UNICODE -DUNICODE -D_WIN32_WINNT=0x0600)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4 /EHsc")
     # Enable console for debugging, will be changed to WIN32 for release
     set(EXECUTABLE_TYPE WIN32)

@@ -60,11 +60,17 @@ void ClickHandler::ToggleSpamMode(MouseButton button) {
     m_cv.notify_one();
 }
 
+void ClickHandler::NotifyStateChange() {
+    m_cv.notify_one();
+}
+
 void ClickHandler::ClickerThread() {
     while (m_running) {
         std::unique_lock<std::mutex> lock(m_mutex);
         m_cv.wait(lock, [this] {
-            return !m_running || (m_app && m_app->IsEnabled() && (m_m1_pressed || m_m2_pressed || m_m4_spam_active || m_m5_spam_active));
+            // The thread wakes up if the app is closing, OR if it's enabled and a button is active
+            return !m_running || (m_app && m_app->IsEnabled() && 
+                   (m_m1_pressed || m_m2_pressed || m_m4_spam_active || m_m5_spam_active));
         });
 
         if (!m_running) {
@@ -80,10 +86,16 @@ void ClickHandler::ClickerThread() {
         bool holdM1 = othersConfig.value("holdBehaviorM1", true);
         bool holdM2 = othersConfig.value("holdBehaviorM2", true);
 
+        json clickerOptions = cfg->GetKey("ClickerOptions");
+        bool m1_enabled = clickerOptions.value("mouse1Enabled", true);
+        bool m2_enabled = clickerOptions.value("mouse2Enabled", true);
+        bool m4_enabled = clickerOptions.value("mouse4Enabled", true);
+        bool m5_enabled = clickerOptions.value("mouse5Enabled", true);
+
         // The loop continues as long as a click condition is met
         while (m_running && m_app->IsEnabled()) {
             bool clicked = false;
-            if (m_m4_spam_active) {
+            if (m4_enabled && m_m4_spam_active) {
                 int limit = othersConfig.value("m4LimitSeconds", 0);
                 if (limit > 0 && (std::chrono::steady_clock::now() - m_m4_spam_start_time > std::chrono::seconds(limit))) {
                     m_m4_spam_active = false;
@@ -91,7 +103,7 @@ void ClickHandler::ClickerThread() {
                     PerformClick(MouseButton::M1);
                     clicked = true;
                 }
-            } else if (m_m5_spam_active) {
+            } else if (m5_enabled && m_m5_spam_active) {
                 int limit = othersConfig.value("m5LimitSeconds", 0);
                 if (limit > 0 && (std::chrono::steady_clock::now() - m_m5_spam_start_time > std::chrono::seconds(limit))) {
                     m_m5_spam_active = false;
@@ -99,10 +111,10 @@ void ClickHandler::ClickerThread() {
                     PerformClick(MouseButton::M2);
                     clicked = true;
                 }
-            } else if (holdM1 && m_m1_pressed) {
+            } else if (m1_enabled && holdM1 && m_m1_pressed) {
                 PerformClick(MouseButton::M1);
                 clicked = true;
-            } else if (holdM2 && m_m2_pressed) {
+            } else if (m2_enabled && holdM2 && m_m2_pressed) {
                 PerformClick(MouseButton::M2);
                 clicked = true;
             }
