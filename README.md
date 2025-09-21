@@ -144,9 +144,9 @@ O executável `AutoClicker.exe` foi verificado no VirusTotal. Mesmo com o códig
 | **Magika**              | PEBIN                                                                                                    |
 | **File Size**           | 246.50 KB (252416 bytes)                                                                                 |
 
-🔗 [Abrir análise completa no VirusTotal](https://www.virustotal.com/gui/file/eb874b9e4765f160c49c5be0077a6d52c8111f496e38f317195283094b42d1f2?nocache=1)
 
 </details>
+🔗 [Abrir análise completa no VirusTotal](https://www.virustotal.com/gui/file/eb874b9e4765f160c49c5be0077a6d52c8111f496e38f317195283094b42d1f2?nocache=1)
 
 ---
 
