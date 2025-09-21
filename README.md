@@ -50,12 +50,12 @@ Para compilar o projeto a partir do código-fonte, você precisará dos seguinte
 
 1.  **Clone o repositório:**
     ```sh
-    git clone https://github.com/your-username/your-repo-name.git
+    git clone https://github.com/zKauaFerreira/Pratice-AutoClicker.git
     ```
 
 2.  **Navegue até a pasta do projeto:**
     ```sh
-    cd your-repo-name
+    cd Pratice-AutoClicker
     ```
 
 3.  **Crie e acesse a pasta de build:**
