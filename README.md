@@ -76,6 +76,8 @@ Se você deseja compilar o projeto a partir do código-fonte, siga os passos aba
 
    ```sh
    mkdir build
+   ```
+   ```sh
    cd build
    ```
 
