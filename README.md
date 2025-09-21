@@ -53,7 +53,7 @@ Se você deseja compilar o projeto a partir do código-fonte, siga os passos aba
 1. **Clone o repositório:**
    ```sh
    git clone https://github.com/zKauaFerreira/Pratice-AutoClicker.git
-```
+    ```
 
 2. **Acesse a pasta do projeto:**
 
