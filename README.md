@@ -121,6 +121,13 @@ As configurações ficam salvas em:
 * `notifyDurationSeconds` → Tempo em segundos.
 * `silenceNotificationsOnFullscreen` → Suprime em tela cheia.
 
+🖱️ **Clicker Options:**
+
+* `mouse1Enabled` → Ativa/desativa o modo "hold-to-click" para o botão esquerdo (`true`/`false`).
+* `mouse2Enabled` → Ativa/desativa o modo "hold-to-click" para o botão direito (`true`/`false`).
+* `mouse4Enabled` → Ativa/desativa o modo "toggle-spam" para o botão lateral M4 (`true`/`false`).
+* `mouse5Enabled` → Ativa/desativa o modo "toggle-spam" para o botão lateral M5 (`true`/`false`).
+
 ⚙️ **Outras Configurações:**
 
 * `holdBehaviorM1` / `M2` → Hold-to-click (`true`/`false`).
