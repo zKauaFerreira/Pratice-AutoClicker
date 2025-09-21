@@ -1,0 +1,7 @@
+#include <windows.h>
+
+// This ID needs to be unique
+#define IDI_APPICON 101
+
+// Link the icon
+IDI_APPICON ICON "icon.ico"
