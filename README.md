@@ -1,8 +1,7 @@
-# ✨ AutoClicker C++
+# ✨ Pratice AutoClicker
 
-O **AutoClicker C++** é um autoclicker de alto desempenho para Windows, criado com o intuito de ser uma ferramenta *prática, leve e configurável* para o dia a dia. Ele roda discretamente na bandeja do sistema (system tray) e não possui uma janela principal, sendo controlado inteiramente por um menu de contexto e uma tecla de atalho global.
+O **Pratice AutoClicker** é um autoclicker de alto desempenho para Windows, criado com o intuito de ser uma ferramenta *prática, leve e configurável* para o dia a dia. Ele roda discretamente na bandeja do sistema (system tray) e não possui uma janela principal, sendo controlado inteiramente por um menu de contexto e teclas de atalho globais.
 
----
 
 ## 🚀 Como Usar o Aplicativo
 
